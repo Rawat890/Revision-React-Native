@@ -1,2 +1,1 @@
-# Minor-Projects
-Consists of the projects in react native specifically to understand various concepts of React native 
+Revision of concepts of react native
