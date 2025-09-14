@@ -51,3 +51,16 @@ console.log(fruitArray);
 //      color: 'yellow',
 //   },)
 console.log(fruitArray)
+
+// If you want to make everything immutable, including the objects inside the array, you need a deep freeze:
+
+function deepFreeze<T>(obj: T): T {
+  Object.freeze(obj);
+  Object.getOwnPropertyNames(obj).forEach((prop) => {
+    const value = (obj as any)[prop];
+    if (value && typeof value === "object" && !Object.isFrozen(value)) {
+      deepFreeze(value);
+    }
+  });
+  return obj;
+}
