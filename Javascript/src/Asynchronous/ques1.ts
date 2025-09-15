@@ -90,3 +90,27 @@ function getUserDataInSteps(url:string): Promise<any> {
 
 getUserDataInSteps('https://jsonplaceholder.typicode.com/todos/1').then((data) => console.log("Data:", data))
   .catch((error) => console.log("Error:", error.message));
+
+//Write a function to convert callback based setTimeout to promise based delay function
+function delay(ms:number) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Hey');
+    }, ms);
+  });
+}
+delay(2000).then(() => {
+  console.log("2 seconds have passed!");
+});
+
+
+//Create a function that returns a promise of resolving a random no. 1-50 
+function getRandomNumber(): Promise<any> {
+  return new Promise((resolve, reject)=>{
+    setTimeout(() => {
+      const random =  Math.random() * 50
+       resolve(random)
+    }, 2000);
+  })
+}
+getRandomNumber().then((data)=>console.log(data)).catch((err)=>console.log(err))
