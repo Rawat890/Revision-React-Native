@@ -47,3 +47,25 @@ const users = [
     isActive: true,
   },
 ];
+
+const newArray = [];
+type User ={
+  id:number,
+  name:string,
+  age:number,
+  isActive:boolean;
+}
+function groupBy<T>(array: T[], key: keyof T): Record<string, T[]> {
+  return array.reduce((acc, item) => {
+    const groupKey = String(item[key]);
+    if (!acc[groupKey]) {
+      acc[groupKey] = [];
+    }
+    acc[groupKey].push(item);
+    return acc;
+  }, {} as Record<string, T[]>);
+}
+
+const groupedByActive = groupBy(users, 'isActive');
+
+console.log(groupedByActive);
