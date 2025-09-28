@@ -38,3 +38,19 @@ function pattern3() {
 console.log('\n');
 pattern3();
 
+function pattern4() {
+  for (let i = 0; i < 6 ; i++) {
+    let row = '';
+    for (let j = i; j < 5; j++) {
+      row += ' ';
+    }
+    for (let j = 0; j <=i; j++) {
+      row += '*';
+    }
+    console.log(row);
+  }
+}
+
+console.log('\n');
+pattern4();
+
