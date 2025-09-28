@@ -142,3 +142,20 @@ const uniqueArr = arr3.reduce((acc, curr) => {
 }, []);
 
 console.log(uniqueArr)
+
+//Find sum of all elements of 2d array
+let Matrix2: number[][] = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+let sum2D: number = 0;
+
+for (let i = 0; i < Matrix2.length; i++) {
+  for (let j = 0; j < Matrix2.length; j++) {
+     sum2D += Matrix2[i][j];
+  }
+}
+
+console.log(sum2D)
